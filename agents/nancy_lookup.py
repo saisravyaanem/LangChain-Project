@@ -16,9 +16,8 @@ from langchain.agents import (
 
 
 def lookup(name : str)->str:
-    llm=ChatOpenAI(temperature=0,model_name="gpt-3.5-turbo",
-                   openai_api_key="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")
-    template="""given the URL{name_of_person} I want to get it me a latest stocks she bought.
+    llm=ChatOpenAI(temperature=0,model_name="gpt-3.5-turbo")
+                   template="""given the URL{name_of_person} I want to get it me a latest stocks she bought.
     Analyse her stock buying process"""
     
     prompt_template=PromptTemplate(template=template,input_variables=["name_of_person"])
